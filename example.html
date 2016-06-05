@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="jQueryPluginOnMouseOver.js"></script>
+
+    <script type="text/javascript">
+        // Add mouse over animation
+        $(document).ready(function () {
+            $('.progressElement').progressOnMouseOver();
+        });
+    </script>
+</head>
+<body>
+
+<style type="text/css">
+    .progress {
+        background-color: rebeccapurple;
+        height: 10px;
+        width: 0px;
+    }
+
+    .progressElement {
+        height: 50px;
+        width: 300px;
+        background-color: #9d9d9d;
+    }
+</style>
+
+<div id="home" class="progressElement">
+    <div class="progress">
+    </div>
+</div>
+
+</body>
+</html>
