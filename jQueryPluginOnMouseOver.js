@@ -7,7 +7,7 @@
 var progressElements = [];
 //
 
-// Helper function to find object in array
+// Helper function for finding object in array
 function findById(source, id) {
     for (var i = 0; i < source.length; i++) {
         if (source[i].id === id) {
@@ -32,7 +32,8 @@ $.fn.progressOnMouseOver = function(){
             progressElement.progress('plus');
         }
     //
-        // Mouse leave handler
+
+    // Mouse leave handler
     }).mouseleave(function () {
         var progressElement = findById(progressElements, this.id);
         progressElement.progress('minus');
