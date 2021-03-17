@@ -2,12 +2,7 @@
  * Created by Lukas Fridl on 11.11.2015.
  */
 
-
-// Array of handled objects
 var progressElements = [];
-//
-
-// Helper function for finding object in array
 function findById(source, id) {
     for (var i = 0; i < source.length; i++) {
         if (source[i].id === id) {
@@ -16,12 +11,7 @@ function findById(source, id) {
     }
     return false;
 }
-//
-
-// jQuery plugin
 $.fn.progressOnMouseOver = function(){
-
-    // Mouse enter handler
     this.mouseenter(function () {
         if (!findById(progressElements, this.id)) {
             var progressElement = new Progress(this.id);
@@ -31,23 +21,16 @@ $.fn.progressOnMouseOver = function(){
             var progressElement = findById(progressElements, this.id);
             progressElement.progress('plus');
         }
-    //
-
-    // Mouse leave handler
     }).mouseleave(function () {
         var progressElement = findById(progressElements, this.id);
         progressElement.progress('minus');
     });
-    //
 }
-//
 
-// Progress object
 function Progress(id) {
     this.id = id;
     var timeOut = 0;
     var width = 0;
-
     this.progress = function (type) {
         var id = this.id;
         clearTimeout(timeOut);
@@ -78,4 +61,3 @@ function Progress(id) {
         }
     }
 }
-//
